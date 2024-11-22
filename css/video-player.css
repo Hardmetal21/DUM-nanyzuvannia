@@ -3,12 +3,14 @@
     position: relative;
     align-self: center;
     width: 80%;
-    padding-bottom: 56.25%;
+    height:max-content;
+    padding: 30px 0 ;
     margin-bottom: 100px;
+    background-color: black;
+    border-radius: 20px;
 }
 
 .video-player {
-    position: absolute;
     top: 0;
     left: 0;
     width: 100%;

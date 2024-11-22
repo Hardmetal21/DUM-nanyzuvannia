@@ -1,29 +1,305 @@
-/**/
 root{
     --text-color-standart:#363636f5;
 }
 body{
-    background:#bfc0c0;
+    background:#D1D646;
 }
+
+.main-content {
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    margin: 0px auto 80px auto;
+    min-height: 500px;
+    justify-content: center;
+}
+
+.navigation, .nav-content
+{
+display: flex;
+position: relative;
+background-color: #f97068;
+height: 40px;
+width: -webkit-fill-avaible;
+justify-content: center;
+}
+
+.nav-content{
+    width: 60%;
+    justify-content:flex-end;
+}
+
+article{
+    width: 60%;
+    min-height:500px;
+    background: #f8f8f8;
+    border-radius: 0 0 30px 30px;
+}
+
+@media screen and (max-width: 900px) {
+    .nav-content, article{
+        width: 80%;
+    }
+}
+
+
+.titylka{
+    display: flex;
+    flex-direction: column;
+    text-align:center;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Випадаюче меню*/
+.navigation ul{
+    display: none; /* Ховаємо меню за замовчуванням */
+    position: absolute;
+    background-color: #f9f9f9;
+    padding: 10px;
+    list-style: none;
+    margin: 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px;
+}
+.navigation ul.sub-menu, .navigation ul.active-sub-menu {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    opacity: 1;
+    visibility: visible;
+    position: absolute;
+    white-space: normal;
+    top: 100%;
+    width: 300px;
+    background-color: #fff;
+    transform: translateX(-25%);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.navigation ul li {
+    margin: 5px 0;
+}
+
+.navigation ul li a {
+    padding:0;
+    text-decoration: none;
+    text-align: center;
+    margin: 6.5px;
+    color: white;
+    font-size: 20px;
+    transition: 0.5s ease;
+    font-family: Calibri;
+    font-weight: bold;
+    border-radius: 3px;
+    position: relative; /* Встановлюємо позиціонування для псевдоелемента */
+    transition: 0.5s;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+}
+
+.navigation ul li a:hover {
+    color: orange;
+}
+
+.triger{
+    font-size: 12px; 
+};
+
+.sub {
+
+}
+
+
+.Li-zmist {
+    margin-top: 5px;
+}
+
+/* Стилі для посилання всередині списку */
+.Li-zmist a {
+    position: relative;
+    display: inline-block;
+    text-decoration: none; 
+    width:max-content;
+    color: black; 
+    transition: color 0.3s ease; 
+}
+
+.Li-zmist a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0); /* Початковий стан - прихована лінія */
+    bottom: -2px; /* Зміщення нижнього підкреслення від тексту */
+    width: 0;
+    height: 3px; /* Висота лінії підкреслення */
+    background-color: orange; /* Колір лінії підкреслення */
+    transition: width 0.5s ease; /* Анімація розширення лінії */
+}
+
+.Li-zmist a:hover::after {
+    width: 100%;
+    transform: translateX(-50%) scaleX(1);
+}
+.Li-zmist a:hover {
+    color: blue; 
+}
+
+
+/*Оформлення стилів тексту*/
+article .text{
+    font-family: Calibri;
+    font-size: 24px;
+    color: var(--text-color-standart);
+    text-indent: 30px;
+    margin-top: -14px;
+    margin-bottom: 14px;
+    text-align: justify;
+    padding: 0 50px;
+}
+article ol {
+    margin-top: 0;
+    padding: 0 50px 0 100px;
+}
+article ol li{
+    font-family: Calibri;
+    color: var(--text-color-standart);
+    padding-right: 20px;
+    font-size: 24px;
+}
+.text-image{
+    text-align: center;
+    font-family: Calibri;
+    font-size: 18px;
+    margin-top: -14px;
+}
+article .oglava{
+    font-family: Calibri;
+    color: #571325;
+    font-size: 28px;
+    padding-left: 8px;
+    text-align: center;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+article li, .Li-zmist{
+    font-family: Calibri;
+    padding-left: 8px;
+    font-size: 24px;
+}
+article a, .Li-zmist{
+    color:var(--text-color-standart);
+    text-decoration: none;
+}
+.bold-text{
+    font-weight: bold;
+}
+.italic-text{
+    font-style: italic;
+}
+
+.navigation a {
+    padding: 2px 10px;
+    text-decoration: none;
+    text-align: center;
+    margin: 6.5px;
+    color: white;
+    font-size: 20px;
+    transition: 0.5s ease;
+    font-family: Calibri;
+    font-weight: bold;
+    border-radius: 3px;
+    position: relative; /* Встановлюємо позиціонування для псевдоелемента */
+    width:max-content;
+    &:hover{
+    color: #000;
+    transition: 0.5s;
+    }
+}
+
+.navigation a::after {
+    content: '';
+    position: absolute;
+    left: 50%; /* Починаємо з центру */
+    bottom: -2px;
+    transform: translateX(-50%) scaleX(0); /* Початковий стан - прихована лінія */
+    transform-origin:center; /* Точка початку трансформації - центр */
+    width: 100%;
+    height: 3px;
+    background-color: orange;
+    transition: transform 0.3s ease; /* Додаємо плавну анімацію */
+}
+
+.navigation a:hover::after {
+    transform: translateX(-50%) scaleX(1); /* Розширення лінії */
+}
+
+.titylka .texts{
+    padding: 0 50px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+.titylka a {
+    width: max-content;
+    background: none;
+    border: 3px solid orange;
+    color: black;
+    font: inherit;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    border-radius: 20px; 
+    position: relative; 
+    transition: all 0.2s ease; 
+    margin: 50px; 
+  }
+  
+
+  .titylka a:hover,
+  .titylka a:focus {
+    box-shadow: 0 10px 20px rgba(212, 120, 7, 0.7); 
+    transform: translateY(-3px); 
+    cursor: pointer; 
+  }
+  
+  .titylka a::after {
+    content: ""; 
+    height: 100%;
+    width: 100%;
+    border-radius: 100px; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: rgba(255, 255, 255, 0.1); 
+    transition: all 0.4s ease; 
+  }
+  
+  .titylka a:hover::after {
+    transform: scale(1.4);
+    opacity: 0; 
+  }
+  
 /*Для шапки*/
-.main-head{
+header{
     display: flex;
     position: relative;
     flex-direction: column;
-    margin: -8px -8px 0px -10px;
-    padding: 0px 8px 0px 10px;
     height: 200px;
 }
-.main-head .head1{
-    margin: 0px -8px 0px -8px;
+.head1{
     display: flex;
     flex-direction: row;
     height: 200px;
-    background:center/cover no-repeat  url("../img/Писанка.jpg");
+    background:center/cover no-repeat  url("../img/Загальна\ директорія/backgroun-for-header.jpg");
 }
 
-.main-head .head2{
-    margin: 0px 0px 0px -10px;
+.head2{
     display: flex;
     width: -webkit-fill-available;
     height: 200px;
@@ -40,224 +316,13 @@ body{
     font-weight: bolder;
     text-transform: uppercase;
 }
+
+@media screen and (max-width: 600px) {
+    .headText{
+      font-size: 50px;
+    }
+  }
 /*Основний контент*/
-.main-content {
-    display: flex;
-    display: -webkit-flex;
-    display: -moz-flex;
-    flex-direction: row;
-    -webkit-flex-direction: row;
-    -moz-flex-direction: row;
-    margin: 50px auto 50px auto;
-    min-height: 500px;
-}
-.main-content .left-block{
-    display: flex;
-    background-color: rgba(182, 182, 182, 0);
-    color: rgba(255,255,255,0);
-    order: 0;
-    flex-direction: column;
-    width: 20%;
-}
-.main-content .text-block {
-   /* border: 6px solid #9dadd7;*/
-    border-radius: 10px;
-    display: flex;
-    background-color: #ffffff;
-    order: 1;
-    flex-direction: column;
-    width: 60%;
-}
-
-.main-content .nav {
-    display: flex;
-    background-color: #fed7a7;
-    order: 2;
-    flex-direction: column;
-    width: 225px;
-    height: fit-content;
-    margin-top: 100px;
-   /* border: 6px solid #9dadd7;*/
-    border-left: 0px;
-    border-radius: 0 10px 10px 0;
-    justify-content: center;
-}
-/*Оформлення блоків для основної сторінки*/
-.text-block .left-part {
-    display: flex;
-    order: 0;
-    flex-direction:column;
-    height: 100%;
-    border-right: 2px solid #d2b68a;
-    width: 50%;
-}
-.text-block .right-part {
-    display: flex;
-    order: 1;
-    flex-direction: column;
-    height: 100%;
-    border-left: 2px solid #d2b68a;
-    width: 50%;
-}
-/* приклад вложеного меню */
-.nav-part{
-    width: 60%;
-    align-self: center;
-    border: 2px solid #847257;
-    padding: 10px 15px ;
-    border-radius: 20px;
-    background: #e2c8a0;
-}
-.nav-part .tab {
-    list-style-type: none;
-    background: #e2c8a0 ;
-    cursor:pointer;
-    padding: 4px 0px;
-    position: relative;
-    border-bottom: 1px solid #fdedd2;
-    transition-duration:1s;
-}
-.nav-part .tab:hover{
-    background: #fdedd2;
-}
-.tab .link {
-    text-decoration: none;
-    display: block;
-    margin: 0 10px;
-    padding: 5px 0px;
-    color: #571325;
-}
-.nav-part ul{
-    display: none;
-    padding-left: 0px;
-    position: absolute;
-    right: -60%;
-    top: 0;
-    width: 60%;
-    border: 2px solid #847257;
-    z-index: 1;
-}
-ul.sub-menu{
-    display: block;
-}
-/*Оформлення стилів тексту*/
-.text-block .text{
-    font-family: Calibri;
-    font-size: 24px;
-    color: var(--text-color-standart);
-    text-indent: 30px;
-    margin-top: -14px;
-    margin-bottom: 14px;
-    text-align: justify;
-    padding: 0 50px;
-}
-.text-block ol {
-    margin-top: 0;
-    padding: 0 50px 0 100px;
-}
-.text-block ol li{
-    font-family: Calibri;
-    color: var(--text-color-standart);
-    padding-right: 20px;
-    font-size: 24px;
-}
-.text-image{
-    text-align: center;
-    font-family: Calibri;
-    font-size: 18px;
-    margin-top: -14px;
-}
-.text-block .oglava{
-    font-family: Calibri;
-    color: #571325;
-    font-size: 28px;
-    padding-left: 8px;
-    text-align: center;
-    font-weight: bolder;
-    text-transform: uppercase;
-}
-.text-block li, .Li-zmist{
-    font-family: Calibri;
-    padding-left: 8px;
-    font-size: 24px;
-}
-.text-block a, .Li-zmist{
-    color:var(--text-color-standart);
-    text-decoration: none;
-}
-.bold-text{
-    font-weight: bold;
-}
-.italic-text{
-    font-style: italic;
-}
-.nav .avtor{
-    text-align: center;
-    color: var(--text-color-standart);
-    font-size: 26px;
-    margin: 10px;
-    font-weight: bolder;
-}
-.nav a{
-    width: auto;
-    margin: -2px 0 0px 0px;
-    text-decoration: none;
-    text-align: center;
-    padding: 6.5px 0px;
-    color: var(--text-color-standart);
-    font-size: 20px;
-    transition-duration: 1s;
-    border-top: 2px solid #69260A;
-    font-family: Calibri;
-}
-.nav a:hover{
-    background: #FDE8E2;
-    color: #69260A;
-}
-
-/*
-.Li-zmist:hover
-{
-color:#69260A;
-border-bottom: 1px solid #69260A;
-transition: 1s;
-}
-*/
-/* Основні стилі для елемента списку */
-.Li-zmist {
-    margin-top: 5px;
-}
-
-/* Стилі для посилання всередині списку */
-.Li-zmist a {
-    position: relative;
-    display: inline-block;
-    text-decoration: none; /* Видаляє стандартне підкреслення */
-    color: black; /* Колір тексту */
-    transition: color 0.3s ease; /* Анімація зміни кольору тексту при наведенні */
-}
-
-/* Стилі для псевдоелемента, який створить підкреслення */
-.Li-zmist a::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -2px; /* Зміщення нижнього підкреслення від тексту */
-    width: 0;
-    height: 2px; /* Висота лінії підкреслення */
-    background-color: black; /* Колір лінії підкреслення */
-    transition: width 0.3s ease; /* Анімація розширення лінії */
-}
-
-/* Стилі при наведенні на посилання */
-.Li-zmist a:hover::after {
-    width: 100%; /* Підкреслення зліва направо */
-}
-
-/* Стилі при наведенні на посилання для зміни кольору тексту */
-.Li-zmist a:hover {
-    color: blue; /* Колір тексту при наведенні */
-}
 
 /*Для функції збільшення картинок*/
 .image {
@@ -298,7 +363,4 @@ transition: 1s;
     max-height:-webkit-fill-available;
     max-width:70%;
     border-radius: 40px;
-}
-footer{
-    margin:20px -8px -8px -8px;min-height: 70px;width: auto;background-color: #ef8354
 }
