@@ -30,6 +30,7 @@ justify-content: center;
 }
 
 article{
+    padding:20px 0 50px 0;
     width: 60%;
     min-height:500px;
     background: #f8f8f8;
@@ -73,7 +74,7 @@ article{
     position: absolute;
     white-space: normal;
     top: 100%;
-    width: 300px;
+    width: 200px;
     background-color: #fff;
     transform: translateX(-25%);
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -122,29 +123,31 @@ article{
 /* Стилі для посилання всередині списку */
 .Li-zmist a {
     position: relative;
+    text-decoration: none;
     display: inline-block;
-    text-decoration: none; 
-    width:max-content;
-    color: black; 
-    transition: color 0.3s ease; 
+    color: black;
+    transition: color 0.3s ease;
+
 }
 
 .Li-zmist a::after {
     content: '';
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%) scaleX(0); /* Початковий стан - прихована лінія */
-    bottom: -2px; /* Зміщення нижнього підкреслення від тексту */
+    left: 50%; 
+    bottom: -2px; 
     width: 0;
-    height: 3px; /* Висота лінії підкреслення */
-    background-color: orange; /* Колір лінії підкреслення */
-    transition: width 0.5s ease; /* Анімація розширення лінії */
+    height: 3px; 
+    background-color: orange;
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: center; 
+    transition: transform 0.5s ease, width 0.5s ease; 
 }
 
 .Li-zmist a:hover::after {
-    width: 100%;
+    width: 100%; 
     transform: translateX(-50%) scaleX(1);
 }
+
 .Li-zmist a:hover {
     color: blue; 
 }
@@ -165,6 +168,7 @@ article ol {
     margin-top: 0;
     padding: 0 50px 0 100px;
 }
+
 article ol li{
     font-family: Calibri;
     color: var(--text-color-standart);
@@ -175,6 +179,7 @@ article ol li{
     text-align: center;
     font-family: Calibri;
     font-size: 18px;
+    padding: 0 50px;
 }
 article .oglava{
     font-family: Calibri;
@@ -208,33 +213,33 @@ article a, .Li-zmist{
     margin: 6.5px;
     color: white;
     font-size: 20px;
-    transition: 0.5s ease;
+    transition: color 0.5s ease; /* Анімація кольору */
     font-family: Calibri;
     font-weight: bold;
     border-radius: 3px;
-    position: relative; /* Встановлюємо позиціонування для псевдоелемента */
-    width:max-content;
-    &:hover{
-    color: #000;
-    transition: 0.5s;
-    }
+    position: relative; /* Для позиціонування псевдоелемента */
+    display: inline-block; /* Забезпечує правильну ширину для всього тексту */
+}
+
+.navigation a:hover {
+    color: #000; /* Зміна кольору тексту */
 }
 
 .navigation a::after {
     content: '';
     position: absolute;
-    left: 50%; /* Починаємо з центру */
-    bottom: -2px;
-    transform: translateX(-50%) scaleX(0); /* Початковий стан - прихована лінія */
-    transform-origin:center; /* Точка початку трансформації - центр */
-    width: 100%;
-    height: 3px;
-    background-color: orange;
-    transition: transform 0.3s ease; /* Додаємо плавну анімацію */
+    left: 50%; /* Центрування псевдоелемента */
+    bottom: -2px; /* Відступ під текстом */
+    transform: translateX(-50%) scaleX(0); /* Початкове стиснення */
+    transform-origin: center; /* Точка початку анімації - центр */
+    width: 100%; /* Лінія завжди дорівнює ширині тексту */
+    height: 3px; /* Висота підкреслення */
+    background-color: orange; /* Колір лінії */
+    transition: transform 0.3s ease; /* Анімація розширення */
 }
 
 .navigation a:hover::after {
-    transform: translateX(-50%) scaleX(1); /* Розширення лінії */
+    transform: translateX(-50%) scaleX(1); /* Масштабування до повної ширини */
 }
 
 .titylka .texts{
@@ -319,6 +324,10 @@ header{
 @media screen and (max-width: 600px) {
     .headText{
       font-size: 50px;
+    }
+    article ol {
+        margin-top: 0;
+        padding: 0 20px 0 40px;
     }
   }
 /*Основний контент*/
