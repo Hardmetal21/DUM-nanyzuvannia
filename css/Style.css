@@ -175,7 +175,6 @@ article ol li{
     text-align: center;
     font-family: Calibri;
     font-size: 18px;
-    margin-top: -14px;
 }
 article .oglava{
     font-family: Calibri;
@@ -327,14 +326,13 @@ header{
 /*Для функції збільшення картинок*/
 .image {
     cursor: pointer;
-    margin-top: -14px;
-    width: auto;
+        width: auto;
     height: auto;
     border: 2px solid #f7dc0e;
     filter: drop-shadow(1px 2px 4px #3F0F1B);
     max-width: 76%;
 }
-.image-center{
+.image-center {
     text-align: center;
 }
 .popup {
@@ -355,12 +353,10 @@ header{
     height:100%;
     width:100%;
 }
-.popup_img{
-    margin-top: 20px;
-    margin-bottom: 75px;
-    position: relative;
-    z-index:2;
-    max-height:-webkit-fill-available;
-    max-width:70%;
+.popup_img {
+    max-width: 90vw; 
+    max-height: 90vh;
     border-radius: 40px;
+    object-fit: contain; 
+    z-index: 2;
 }
