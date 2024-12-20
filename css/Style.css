@@ -48,6 +48,15 @@ article{
     border-radius: 0 0 30px 30px;
 }
 
+.navigation.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
 @media screen and (max-width: 900px) {
     .nav-content, article{
         width: 80%;
@@ -65,6 +74,10 @@ article{
 
 
 /* Випадаюче меню*/
+.sub {
+    position: relative;
+    }
+    
 .navigation ul{
     display: none; /* Ховаємо меню за замовчуванням */
     position: absolute;
@@ -122,17 +135,15 @@ article{
     font-size: 12px; 
 };
 
-.sub {
-
-}
 
 
 .Li-zmist {
-    margin-top: 15px;
+   
 }
 
 /* Стилі для посилання всередині списку */
 .Li-zmist a {
+    margin-top: 15px;
     position: relative;
     text-decoration: none;
     display: inline-block;
@@ -364,12 +375,13 @@ header{
     display:none;
     justify-content: center;
     align-items: center;
+    z-index: 3;
 }
 
 .popup_bg {
     background:rgba(0,0,0,0.4);
     position:absolute;
-    z-index:1;
+    z-index:4;
     height:100%;
     width:100%;
 }
@@ -378,5 +390,5 @@ header{
     max-height: 90vh;
     border-radius: 40px;
     object-fit: contain; 
-    z-index: 2;
+    z-index: 5;
 }
