@@ -152,7 +152,7 @@ article{
 
 }
 
-.Li-zmist a::after {
+.Li-zmist a::after, .Zmist::after {
     content: '';
     position: absolute;
     left: 50%; 
@@ -165,13 +165,21 @@ article{
     transition: transform 0.5s ease, width 0.5s ease; 
 }
 
-.Li-zmist a:hover::after {
+.Li-zmist a:hover::after, .Zmist:hover::after {
     width: 100%; 
     transform: translateX(-50%) scaleX(1);
 }
 
-.Li-zmist a:hover {
+.Li-zmist a:hover, .Zmist:hover {
     color: var(--zmist-hover); 
+}
+
+.Zmist{
+    position: relative;
+    text-decoration: none;
+    display: inline-block;
+    color: black;
+    transition: color 0.3s ease; 
 }
 
 
@@ -197,6 +205,14 @@ article ol li{
     padding-right: 20px;
     font-size: 24px;
 }
+
+article h1 
+{
+padding: 0 50px;
+font-family: Calibri;
+margin: 0 0 12px 0;
+}
+
 .text-image{
     text-align: center;
     font-family: Calibri;
@@ -333,7 +349,7 @@ header{
     align-items: center;
     background: var(--header-bg-color);
 }
-.headText {
+.headText,.headTextForMainPage {
     font-family: Calibri;
     color: #ffffff;
     font-size: 86px;
@@ -342,7 +358,9 @@ header{
     font-weight: bolder;
     text-transform: uppercase;
 }
-
+.headTextForMainPage{
+font-size: 60px;
+}
 @media screen and (max-width: 600px) {
     .headText{
       font-size: 50px;
@@ -351,7 +369,14 @@ header{
         margin-top: 0;
         padding: 0 20px 0 40px;
     }
+    .headTextForMainPage{
+        font-size: 40px;
+        }
   }
+
+
+
+
 /*Основний контент*/
 
 /*Для функції збільшення картинок*/
