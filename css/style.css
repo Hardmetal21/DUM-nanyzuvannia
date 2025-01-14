@@ -363,7 +363,7 @@ header{
 .headTextForMainPage{
 font-size: 60px;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
     .headText{
       font-size: 50px;
     }
@@ -411,6 +411,22 @@ font-size: 60px;
             border-radius: 0px;
             border-bottom: #f7dc0e 8px solid;
         }
+        .rotate-buttons button {
+            padding: 10px 15px;
+            background-color: #3F0F1B;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .popup_img {
+            transform-origin: center center;
+          }
+          .popup_img_container {
+            padding: 0;
+          }
   }
 
 
@@ -430,7 +446,15 @@ font-size: 60px;
 }
 .image-center {
     text-align: center;
-}
+}  
+  .popup_img_container {
+    position: relative;
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
 .popup {
     position: fixed;
     height:100%;
@@ -451,9 +475,38 @@ font-size: 60px;
     width:100%;
 }
 .popup_img {
-    max-width: 90vw; 
+    max-width: 90vw;
     max-height: 90vh;
-    border-radius: 40px;
     object-fit: contain; 
+    width: auto;
+    height: auto;
+    transform-origin: center;    
+    transition: transform 0.3s ease;
+    border-radius: 10px;
     z-index: 5;
+}
+
+.rotate-buttons {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 6;
+    display: flex;
+    gap: 10px;
+}
+
+.rotate-buttons button {
+    padding: 10px 15px;
+    background-color: #3F0F1B;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.rotate-buttons button:hover {
+    background-color: #5F1F2B;
 }
