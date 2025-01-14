@@ -3,6 +3,7 @@
     --bg-color:#D1D646;
     --navbg-color:#f97068;
     --artbg-color:#f8f8f8;
+    --nav-text-color:white;
     --nav-hover-color:orange;
     --nav-txthover-color:#000;
     --zmist-hover:blue;
@@ -41,7 +42,7 @@ justify-content: center;
 }
 
 article{
-    padding:20px 0 50px 0;
+    padding:20px 75px 50px 75px;
     width: 60%;
     min-height:500px;
     background: var(--artbg-color);
@@ -114,7 +115,7 @@ article{
     text-decoration: none;
     text-align: center;
     margin: 0 6.5px;
-    color: white;
+    color: var(--nav-text-color);
     font-size: 20px;
     transition: 0.5s ease;
     font-family: Calibri;
@@ -192,23 +193,20 @@ article .text{
     margin-top: -14px;
     margin-bottom: 14px;
     text-align: justify;
-    padding: 0 50px;
-}
+    }
 article ol {
     margin-top: 0;
-    padding: 0 50px 0 100px;
+    margin-left: 30px;
 }
 
 article ol li{
     font-family: Calibri;
     color: var(--text-color-standart);
-    padding-right: 20px;
-    font-size: 24px;
+        font-size: 24px;
 }
 
 article h1 
 {
-padding: 0 50px;
 font-family: Calibri;
 margin: 0 0 12px 0;
 }
@@ -217,7 +215,6 @@ margin: 0 0 12px 0;
     text-align: center;
     font-family: Calibri;
     font-size: 18px;
-    padding: 0 50px;
 }
 article .oglava{
     font-family: Calibri;
@@ -251,29 +248,29 @@ article a, .Li-zmist{
     margin: 6.5px;
     color: white;
     font-size: 20px;
-    transition: color 0.5s ease; /* Анімація кольору */
+    transition: color 0.5s ease;
     font-family: Calibri;
     font-weight: bold;
     border-radius: 3px;
-    position: relative; /* Для позиціонування псевдоелемента */
-    display: inline-block; /* Забезпечує правильну ширину для всього тексту */
+    position: relative; 
+    display: inline-block;
 }
 
 .navigation a:hover {
-    color: var(--nav-txthover-color); /* Зміна кольору тексту */
+    color: var(--nav-txthover-color); 
 }
 
 .navigation a::after {
     content: '';
     position: absolute;
-    left: 50%; /* Центрування псевдоелемента */
-    bottom: -2px; /* Відступ під текстом */
-    transform: translateX(-50%) scaleX(0); /* Початкове стиснення */
-    transform-origin: center; /* Точка початку анімації - центр */
-    width: 100%; /* Лінія завжди дорівнює ширині тексту */
-    height: 3px; /* Висота підкреслення */
-    background-color: var(--nav-hover-color); /* Колір лінії */
-    transition: transform 0.3s ease; /* Анімація розширення */
+    left: 50%; 
+    bottom: -2px; 
+    transform: translateX(-50%) scaleX(0); 
+    transform-origin: center;
+    width: 100%; 
+    height: 3px; 
+    background-color: var(--nav-hover-color);
+    transition: transform 0.3s ease;
 }
 
 .navigation a:hover::after {
@@ -281,7 +278,6 @@ article a, .Li-zmist{
 }
 
 .titylka .texts{
-    padding: 0 50px;
     font-family: 'Times New Roman', Times, serif;
     text-align: center;
 }
@@ -340,6 +336,12 @@ header{
     height: 200px;
     background:center/cover no-repeat  url("../img/Загальна\ директорія/backgroun-for-header.jpg");
 }
+.head1-vishivka{
+    display: flex;
+    flex-direction: row;
+    height: 200px;
+    background:center/cover no-repeat  url("../img/Загальна\ директорія/beautiful-shirt-with-embroidery-high-angle.jpg");
+}
 
 .head2{
     display: flex;
@@ -367,10 +369,47 @@ font-size: 60px;
     }
     article ol {
         margin-top: 0;
-        padding: 0 20px 0 40px;
-    }
+        margin-left: 10px;
+            }
+            
+    article ol li 
+    {
+        font-size: 16px;
+    }        
     .headTextForMainPage{
         font-size: 40px;
+        }
+        .navigation ul li a {
+            font-size: 10px;
+        }
+        .nav-content{
+            align-items: center;
+            justify-content: center;
+        }
+        .navigation a {
+            padding: 2px 10px;
+            margin: 4px 6px;
+            font-size: 12px;
+        }
+        .triger{
+            display: none;
+        }
+        article .text{
+        
+            font-size: 16px;
+            color: var(--text-color-standart);
+            text-indent: 10px;
+            margin-top: -14px;
+            margin-bottom: 14px;
+            text-align: justify;
+        }
+        article
+        {
+            padding-left: 30px;
+            padding-right: 30px;
+            width: 100%;
+            border-radius: 0px;
+            border-bottom: #f7dc0e 8px solid;
         }
   }
 
@@ -383,6 +422,7 @@ font-size: 60px;
 .image {
     cursor: pointer;
         width: auto;
+        max-height: 400px;
     height: auto;
     border: 2px solid var(--border-img-cl);
     filter: drop-shadow(1px 2px 4px #3F0F1B);
