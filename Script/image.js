@@ -43,13 +43,17 @@ $(document).ready(function () {
         
                 if (Math.abs(currentRotation % 180) === 90) {
                     if (isWide && !isAlmostSquare) {
-                        finalHeight = viewportHeight * 0.5;
+                        if(aspectRatio > 2.6)
+                        {finalHeight = viewportHeight * 0.24;}
+                        else if((aspectRatio > 1.7))
+                        {finalHeight = viewportHeight * 0.38;}
+                        else
+                        {finalHeight = viewportHeight * 0.45;}
                         finalWidth = 'auto';
                     } else if (!isWide && !isAlmostSquare) {
-                        finalHeight = viewportWidth * 0.9;
+                        finalHeight = viewportWidth * 0.65;
                         finalWidth = 'auto'; 
                     } else {
-
                         finalWidth = viewportWidth * 0.9;
                         finalHeight = viewportHeight * 0.9;
                     }
