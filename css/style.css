@@ -447,16 +447,15 @@ font-size: 60px;
 .image-center {
     text-align: center;
 }  
-  .popup_img_container {
-    position: relative;
-    z-index: 1001;
+.popup_img_container {
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-
+    position: relative;
+    z-index: 5;
+}
 .popup {
-    position: fixed;
+    position:fixed;
     height:100%;
     width:100%;
     top:0;
@@ -464,29 +463,25 @@ font-size: 60px;
     display:none;
     justify-content: center;
     align-items: center;
-    z-index: 3;
+    z-index: 5;
 }
 
 .popup_bg {
     background:rgba(0,0,0,0.4);
     position:absolute;
-    z-index:4;
+    z-index:5;
     height:100%;
     width:100%;
 }
 .popup_img {
-    max-width: 90vw;
-    max-height: 90vh;
-    object-fit: contain; 
-    width: auto;
-    height: auto;
-    transform-origin: center;    
+    object-fit: contain;
+    transform-origin: center;
     transition: transform 0.3s ease;
     border-radius: 10px;
     z-index: 5;
 }
 
-.rotate-buttons {
+.popup_controls {
     position: fixed;
     bottom: 10px;
     left: 50%;
@@ -496,7 +491,7 @@ font-size: 60px;
     gap: 10px;
 }
 
-.rotate-buttons button {
+.popup_controls button {
     padding: 10px 15px;
     background-color: #3F0F1B;
     color: white;
@@ -505,8 +500,9 @@ font-size: 60px;
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s;
+    z-index: 6;
 }
 
-.rotate-buttons button:hover {
+.popup_controls button:hover {
     background-color: #5F1F2B;
 }
